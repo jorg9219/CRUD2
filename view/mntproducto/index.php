@@ -252,7 +252,7 @@
           </div><!-- dropdown -->
           <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name hidden-md-down">Katherine</span>
+              <span class="logged-name hidden-md-down">Jorge</span>
               <img src="http://via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
               <span class="square-10 bg-success"></span>
             </a>
@@ -675,6 +675,8 @@
     </div><!-- br-sideright -->
     <!-- ########## END: RIGHT PANEL ########## --->
 
+    <?php require_once("modalmantenimiento.php");?>
+
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
       <div class="br-pageheader pd-y-15 pd-l-20">
@@ -692,6 +694,7 @@
 
       <div class="br-section-wrapper">
           <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Mantenimiento de Procducto</h6>
+          <button id="btnnuevo" class="btn btn-primary btn-block mg-b-10">Nuevo Registro</button>
           <div class="table-wrapper">
             <table id="producto_data" class="table display responsive nowrap datatable">
               <thead>
@@ -725,6 +728,8 @@
     <script src="../../public/lib/jquery-switchbutton/jquery.switchButton.js"></script>
     <script src="../../public/lib/peity/jquery.peity.js"></script>
     <script src="../../public/js/bracket.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script src="../../public/lib/datatables/jquery.dataTables.js"></script>
     <!-- <script src="../../public/lib/datatables-responsive/dataTables.responsive.js"></script> -->
@@ -739,7 +744,9 @@
     <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    
     <script type="text/javascript" src="mntproducto.js"></script>
+
 
   </body>
 </html>

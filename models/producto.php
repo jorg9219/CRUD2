@@ -27,8 +27,10 @@ class producto extends Conectar{
          est=0,
          fech_elim=now()
          WHERE
-         prod_id = ";
+         prod_id = ?"; //MJOB - te falto el ? 
+        echo $sql; //MJOB - si tienes alguna duda de por que no se inserta o elimina siempre imprime el SQL para q lo ejecutes en el mysql
         $sql=$conectar->prepare($sql);
+       
         $sql->bindValue(1,$prod_id);
         $sql->execute();
         return $resultado=$sql->fetchAll();
@@ -37,10 +39,12 @@ class producto extends Conectar{
     public function insert_producto($prod_nom){
         $conectar= parent::conexion();
         parent::set_names();
-        $sql="INSERT INTO tm producto (prod_id, prod_nom, fech_crea, fech_modi, fech_elim, est) VALUES (NULL, ?, now(), '2021-11-30 01:15:21.000000', NULL, NULL, 1);
+        // son 5 parametros             1           2           3           4       5           1    2     3     4      5
+        $sql="INSERT INTO tm_producto (prod_nom, fech_crea, fech_modi, fech_elim, est) VALUES ( ?, now(), now(), NULL,  1);
         ";
+        echo $sql;
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1,$prod_id);
+        $sql->bindValue(1,$prod_nom);
         $sql->execute();
         return $resultado=$sql->fetchAll();
     }
